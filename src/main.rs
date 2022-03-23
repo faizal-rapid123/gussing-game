@@ -1,6 +1,7 @@
 //including standard IO module for use input capture
 use std::io;
-use rand::{thread_rng, Rng};
+
+mod giverand; // importing random number generator from other module
 
 fn main() //program start
 {
@@ -21,12 +22,7 @@ fn main() //program start
     panic!("number should be less than and 10"); // aborting the program if the number entered is greater than 10
     }
 
-    let mut rng = thread_rng();
-
-    // Exclusive range
-    let n: u32 = rng.gen_range(0..10);
-    let n:i32 = n as i32; //parsing n in i32 as guess is also in i32 formate
-
+    let n = giverand::generaterandom();
 
     if n == guess
     {
